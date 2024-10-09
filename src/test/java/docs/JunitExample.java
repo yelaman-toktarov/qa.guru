@@ -1,26 +1,37 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+package docs;
+
+import org.junit.jupiter.api.*;
 
 public class JunitExample {
 
     @BeforeAll
     static void beforeAll(){
-        System.out.println("before All");
+        System.out.println("BeforeAll");
+    }
+
+    @AfterAll
+    static void afterAll(){
+        System.out.println("AfterAll");
     }
 
     @BeforeEach
     void beforeEach(){
-        System.out.println("    before Each");
+        System.out.println("        BeforeEach");
     }
+
+    @AfterEach
+    void tearDown() {
+        System.out.println("        AfterEach");
+    }
+
 
     @Test
     void firsTest(){
-        System.out.println("        Here is first test");
+        System.out.println("            Here is first test");
     }
 
     @Test
     void secondTest(){
-        System.out.println("        Here is second test");
+        System.out.println("             Here is second test");
     }
 }
